@@ -1,0 +1,414 @@
+.syllabus {
+    // max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px; // Reduced side margins
+
+    section {
+        margin-bottom: 40px;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        
+        h2 {
+            font-size: 1.8em;
+            color: $primary-color;
+            margin: 0 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba($primary-color, 0.1);
+            font-weight: 600;
+        }
+
+        // Inset subheaders
+        h3 {
+            font-size: 1.4em;
+            color: $primary-color;
+            // margin: 0 0 20px 20px; // Added left margin
+            font-weight: 500;
+        }
+
+        // Weekly Topics formatting
+        .weekly-topics {
+            margin-top: 30px;
+            margin-left: 20px; // Inset content
+
+            .module {
+                margin-bottom: 30px;
+
+                h4 {
+                    font-size: 1.2em;
+                    margin-bottom: 15px;
+                    font-weight: 600;
+                    color: $secondary-text-color;
+                }
+                
+
+                .weeks-list {
+                    list-style: none;
+                    padding: 0;
+
+                    .week-item {
+                        padding: 12px 15px;
+                        background: rgba($secondary-color, 0.2);
+                        border-radius: 6px;
+                        margin-bottom: 8px;
+                        font-size: 1.05em;
+
+                        strong {
+                            color: $primary-color;
+                            margin-right: 10px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Assignments formatting
+        .assignments-overview {
+            margin-left: 20px; // Inset content
+
+            .main-assignments {
+                margin-bottom: 30px;
+
+                .overview-list {
+                    list-style: none;
+                    padding: 0;
+
+                    .overview-item {
+                        padding: 12px 15px;
+                        background: rgba($secondary-color, 0.2);
+                        border-radius: 6px;
+                        margin-bottom: 8px;
+                        font-size: 1.1em;
+                    }
+                }
+            }
+
+            .weekly-exercises {
+                .exercise-list {
+                    list-style: none;
+                    padding: 0;
+
+                    .exercise-item {
+                        padding: 12px 15px;
+                        background: rgba($secondary-color, 0.2);
+                        border-radius: 6px;
+                        margin-bottom: 8px;
+                        font-size: 1.05em;
+
+                        strong {
+                            color: $primary-color;
+                            margin-right: 10px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Grading formatting
+        .grading-info {
+            margin-left: 20px; // Inset content
+
+            .grade-breakdown {
+                margin-bottom: 30px;
+
+                .breakdown-list {
+                    list-style: none;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 10px;
+
+                    .breakdown-item {
+                        padding: 15px;
+                        background: rgba($secondary-color, 0.2);
+                        border-radius: 6px;
+                        text-align: center;
+                        font-size: 1.1em;
+
+                        .component {
+                            color: $primary-color;
+                            font-weight: 500;
+                        }
+
+                        .percentage {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+
+            .grade-scale {
+                .scale-list {
+                    list-style: none;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 10px;
+
+                    .scale-item {
+                        padding: 12px 15px;
+                        background: rgba($secondary-color, 0.2);
+                        border-radius: 6px;
+                        text-align: center;
+                        font-size: 1.05em;
+
+                        .grade {
+                            color: $primary-color;
+                            font-weight: 500;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Schedule info formatting
+        .schedule-info {
+            margin-left: 20px; // Inset content
+            p {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+        }
+
+        // Objectives list formatting
+        .objectives-list {
+            margin-left: 20px; // Inset content
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 8px 0;
+                font-size: 1.1em;
+                position: relative;
+                padding-left: 20px;
+
+                &:before {
+                    content: "•";
+                    color: $primary-color;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+// Mobile portrait mode optimizations
+@media (max-width: $mobile) {
+    .syllabus {
+        padding: 0 5px;
+        
+        section {
+            padding: 15px;
+            
+            h2 {
+                font-size: 1.4em;
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 1.2em;
+                margin: 15px 0 10px 10px;
+            }
+
+            // Adjust grid layouts for single column
+            .grading-info {
+                margin-left: 10px;
+
+                .grade-breakdown {
+                    .breakdown-list {
+                        grid-template-columns: 1fr; // Single column
+                        gap: 8px;
+
+                        .breakdown-item {
+                            padding: 12px;
+                            font-size: 1em;
+                        }
+                    }
+                }
+
+                .grade-scale {
+                    .scale-list {
+                        grid-template-columns: repeat(2, 1fr); // Two columns for grade scale
+                        gap: 8px;
+
+                        .scale-item {
+                            padding: 10px;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+
+            // Adjust weekly topics
+            .weekly-topics {
+                margin-left: 10px;
+
+                .module {
+                    margin-bottom: 20px;
+
+                    h4 {
+                        font-size: 1.1em;
+                        margin-bottom: 10px;
+                    }
+
+                    .weeks-list {
+                        .week-item {
+                            padding: 10px;
+                            font-size: 0.95em;
+                            
+                            // Handle long text
+                            word-wrap: break-word;
+                            overflow-wrap: break-word;
+                        }
+                    }
+                }
+            }
+
+            // Adjust assignments
+            .assignments-overview {
+                margin-left: 10px;
+
+                .overview-list {
+                    .overview-item {
+                        padding: 10px;
+                        font-size: 0.95em;
+                    }
+                }
+
+                .weekly-exercises {
+                    .exercise-list {
+                        .exercise-item {
+                            padding: 10px;
+                            font-size: 0.95em;
+                            
+                            // Better handling of long text
+                            word-wrap: break-word;
+                            overflow-wrap: break-word;
+                        }
+                    }
+                }
+            }
+
+            // Adjust schedule info
+            .schedule-info {
+                margin-left: 10px;
+                
+                p {
+                    font-size: 0.95em;
+                }
+            }
+
+            // Adjust objectives list
+            .objectives-list {
+                margin-left: 10px;
+                
+                li {
+                    font-size: 0.95em;
+                    padding: 6px 0 6px 15px;
+                    
+                    // Handle long text
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+        }
+    }
+
+    // Adjust navigation
+    #sectionNav {
+        ul {
+            flex-direction: column;
+            padding: 10px;
+            
+            li {
+                width: 100%;
+                margin-bottom: 5px;
+                
+                a {
+                    padding: 10px;
+                    text-align: left;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+
+    // Adjust course navigation
+    #courseNav {
+        .nav-header {
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        ul {
+            flex-wrap: wrap;
+            
+            li {
+                flex: 1 1 100%;
+                
+                a {
+                    padding: 10px;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+}
+
+// Additional optimization for very small screens
+@media (max-width: 350px) {
+    .syllabus {
+        section {
+            padding: 10px;
+            
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .grading-info {
+                .grade-scale {
+                    .scale-list {
+                        grid-template-columns: 1fr; // Single column for very small screens
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Handle landscape vs portrait orientation
+@media (max-width: $mobile) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+
+@media (max-width: $mobile) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+    }
+
+    aside {
+        width: 200px;
+        margin-bottom: 0;
+    }
+
+    main {
+        flex: 1;
+    }
+}

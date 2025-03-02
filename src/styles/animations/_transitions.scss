@@ -1,0 +1,84 @@
+// General transitions
+.fade {
+    transition: opacity 0.3s ease;
+    
+    &-enter {
+        opacity: 0;
+    }
+    
+    &-enter-active {
+        opacity: 1;
+    }
+    
+    &-exit {
+        opacity: 1;
+    }
+    
+    &-exit-active {
+        opacity: 0;
+    }
+}
+
+// Syllabus transitions
+.syllabus {
+    &-transition {
+        transition: all 0.3s ease;
+        
+        &-enter {
+            opacity: 0;
+            transform: scale(0.98);
+            filter: blur(8px);
+        }
+        
+        &-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+        
+        &-exit {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+        
+        &-exit-active {
+            opacity: 0;
+            transform: scale(1.02);
+            filter: blur(8px);
+        }
+    }
+}
+
+// Link hover transitions
+a {
+    transition: all 0.2s ease;
+    
+    &:hover {
+        transition: all 0.2s ease;
+    }
+}
+
+// Button transitions
+button {
+    transition: all 0.2s ease;
+    
+    &:hover {
+        transition: all 0.2s ease;
+    }
+}
+
+// Navigation transitions
+#sectionNav {
+    a {
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        
+        &:hover {
+            transform: translateY(-1px);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}

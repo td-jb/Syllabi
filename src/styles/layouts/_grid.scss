@@ -1,0 +1,98 @@
+// Grid system variables
+$grid-columns: 12;
+$grid-gap: 20px;
+$container-max-width: 1200px;
+
+// Container
+.grid-container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $body-margin;
+}
+
+// Row
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    gap: $grid-gap;
+    margin-bottom: $grid-gap;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Column classes
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        grid-column: span $i;
+    }
+}
+
+// Responsive grid classes
+@media (max-width: $tablet) {
+    @for $i from 1 through $grid-columns {
+        .col-tablet-#{$i} {
+            grid-column: span $i;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    @for $i from 1 through $grid-columns {
+        .col-mobile-#{$i} {
+            grid-column: span $i;
+        }
+    }
+    
+    // Stack all columns on mobile if needed
+    .grid-stack-mobile {
+        .col {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+// Grid utilities
+.grid-center {
+    place-items: center;
+}
+
+.grid-stretch {
+    align-items: stretch;
+}
+
+.grid-start {
+    align-items: start;
+}
+
+.grid-end {
+    align-items: end;
+}
+
+// Auto-fit grid for cards or similar elements
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $grid-gap;
+}
+
+// Masonry-like grid
+.masonry-grid {
+    columns: 3;
+    column-gap: $grid-gap;
+    
+    @media (max-width: $tablet) {
+        columns: 2;
+    }
+    
+    @media (max-width: $mobile) {
+        columns: 1;
+    }
+    
+    > * {
+        break-inside: avoid;
+        margin-bottom: $grid-gap;
+    }
+}

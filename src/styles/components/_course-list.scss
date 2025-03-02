@@ -1,0 +1,45 @@
+aside {
+    width: fit-content; // Increased width
+    flex-shrink: 0; // Prevent shrinking
+    background: $secondary-color;
+    padding: 20px;
+    border-radius: 4px;
+    
+    h2 {
+        margin: 0 0 20px 0;
+        color: $primary-color;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            margin-bottom: 10px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: $text-color;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background:  color.adjust($secondary-color, $lightness: -5%);
+                    color: $primary-color;
+                }
+                
+                &.active {
+                    background: $primary-color;
+                    color: white;
+                }
+            }
+        }
+    }
+}

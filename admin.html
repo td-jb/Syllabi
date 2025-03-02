@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Admin</title>
+</head>
+<body>
+    <header>
+        <h1>Syllabus Admin</h1>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Courses</h2>
+            <ul id="courseList"></ul>
+            <button id="addCourse">Add New Course</button>
+        </aside>
+        <main>
+            <div id="editor">
+                <div id="jsonEditor"></div>
+                <div class="actions">
+                    <button id="save">Save Changes</button>
+                    <button id="preview">Preview</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/src/admin.js"></script>
+</body>
+</html>

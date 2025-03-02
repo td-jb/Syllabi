@@ -1,0 +1,29 @@
+@use "sass:color";
+
+// Base
+@import 'styles/base/variables';
+@import 'styles/base/reset';
+@import 'styles/base/typography';
+@import 'styles/base/base';
+
+// Utils
+@import 'styles/utils/mixins';
+@import 'styles/utils/functions';
+
+// Layouts
+@import 'styles/layouts/container';
+@import 'styles/layouts/grid';
+
+// Components
+@import 'styles/components/header';
+@import 'styles/components/navigation';
+@import 'styles/components/course-list';
+@import 'styles/components/syllabus';
+@import 'styles/components/footer';
+
+// Animations
+@import 'styles/animations/morphing';
+@import 'styles/animations/transitions';
+
+// Media Queries
+@import 'styles/media-queries';

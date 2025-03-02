@@ -1,0 +1,35 @@
+header {
+    background: #fff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#morphContainer {
+    position: relative;
+    width: 100%;
+    height: $header-height;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1, #text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    color: $text-color;
+    font-family: $header-font;
+    font-size: 30pt;
+    text-align: center;
+    user-select: none;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 1px;
+}
+
+#filters {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}

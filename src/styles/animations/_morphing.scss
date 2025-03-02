@@ -1,0 +1,35 @@
+#morphContainer {
+    position: relative;
+    width: 100%;
+    height: 80pt;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#contentMorphContainer {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 100%;
+    filter: url(#threshold) blur(0.6px);
+    overflow: visible;
+}
+
+.content-morph {
+    width: 100%;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    will-change: opacity;
+}
+.syllabus {
+    section {
+        // Simplify the transforms and remove potentially problematic properties
+        transform: translateZ(0);
+    }
+}
+
+#filters {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}

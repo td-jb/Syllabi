@@ -1,0 +1,29 @@
+@media (max-width: $mobile) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    #text1, #text2 {
+        font-size: 24pt;
+    }
+
+    #sectionNav {
+        overflow-x: auto;
+        
+        ul {
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            
+            li {
+                flex-shrink: 0;
+            }
+        }
+    }
+}

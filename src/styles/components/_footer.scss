@@ -1,0 +1,10 @@
+footer {
+    background: $text-color;
+    color: #fff;
+    text-align: center;
+    padding: 10px $body-margin;
+    min-height: $footer-height;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+}

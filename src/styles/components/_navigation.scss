@@ -1,0 +1,106 @@
+
+#sectionNav {
+    width: fit-content;
+    background: $secondary-color;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    
+    transition: display 0.3s ease;
+    
+    @media (max-width: $mobile) { 
+        display: none;
+    }
+    
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        li {
+            margin-bottom: 10px;
+            
+            a {
+                color: $text-color;
+                text-decoration: none;
+                font-size: 0.9em;
+                padding: 8px 16px;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                display: block;
+                
+                &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+                    color: $primary-color;
+                }
+                
+                &.active {
+                    background: $primary-color;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+#courseNav {
+    background:  color.adjust($primary-color, $lightness: -10%);
+    width: 100%;
+    padding: 0;
+    display: flex; // Add this
+    align-items: center; // Add this
+    
+    .nav-header {
+        padding: 15px 20px;
+        color: white;
+        font-weight: 500;
+        white-space: nowrap; // Prevent wrapping
+        font-size: 0.9em;
+        text-align: center;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex: 1; // Add this to make the ul take remaining space
+        
+        li {
+            flex: 1;
+            
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 0.9em;
+                padding: 15px 20px;
+                display: block;
+                text-align: center;
+                transition: all 0.3s ease;
+                background:  color.adjust($primary-color, $lightness: -10%);
+                
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+                
+                &.active {
+                    background: $secondary-text-color;
+                }
+            }
+        }
+    }
+}
+
+// Add responsive handling
+@media (max-width: $mobile) {
+    #courseNav {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .nav-header {
+            padding: 10px 15px;
+        }
+    }
+    
+}
