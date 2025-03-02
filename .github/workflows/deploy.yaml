@@ -39,3 +39,12 @@ jobs:
         with:
           folder: dist  # The folder the action should deploy
           branch: gh-pages  # The branch the action should deploy to
+        -name: Check Env
+        run: |
+          echo "Checking for env vars..."
+          if [ -f .env ]; then
+            echo "Env file exists"
+            cat .env | grep -v "KEY"
+          else
+            echo "No env file found"
+          fi

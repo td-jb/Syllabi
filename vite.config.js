@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/syllabi/',
+  base: '/Syllabi/',
   css: {  
     assetsInclude: ['**/*.json'],
     server: {
